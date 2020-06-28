@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('todos', 'TodosController@index');
+Route::get('todos/{id}', 'TodosController@show');
+Route::get('todos/new', 'TodosController@create');
+Route::post('todos/save', 'TodosController@save');
+Route::get('todos/{id}/edit', 'TodosController@edit');
+Route::post('todos/{id}/update', 'TodosController@update');
