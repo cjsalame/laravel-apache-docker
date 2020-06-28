@@ -14,7 +14,7 @@
         </ul>
       </div>
     @endif
-    <form action="/save-todo" method="post">
+    <form action="/todos/save" method="post">
       @csrf
       <div class="form-group">
         <input type="text" name="name" class="form-control" placeholder="Name">

@@ -18,12 +18,19 @@
         <a class="nav-link" href="/todos">Todos List<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/new-todo">Create Todo<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/todos/new">Create Todo<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
 </nav>
     <div class="container">
+
+      @if(session()->has('success'))
+        <div class="alert alert-success">
+          {{session()->get('success')}}
+        </div>
+      @endif
+
       @yield('content')
     </div>
   </body>

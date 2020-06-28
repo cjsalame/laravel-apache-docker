@@ -14,7 +14,13 @@
         {{ $todo->description }}
       </div>
     </div>
-    <a href="/todos/{{$todo->id}}/edit" class="btn btn-info btn-sm my-2">Edit</a>
+    @if(!$todo->completed)
+      <a href="/todos/{{$todo->id}}/complete" class="btn btn-success">Complete</a>
+    @else
+      <button class="btn btn-secondary">Completed</button>
+    @endif
+    <a href="/todos/{{$todo->id}}/edit" class="btn btn-info my-2">Edit</a>
+    <a href="/todos/{{$todo->id}}/delete" class="btn btn-danger my-2">Delete</a>
   </div>
 </div>
 @endsection
